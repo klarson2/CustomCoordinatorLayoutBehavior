@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinator_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.krislarson.customcoordinatorlayoutbehavior.ScrollingActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:minHeight="108dp"
+            android:fitsSystemWindows="true"
+            app:title="Abby"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleGravity="center_horizontal"
+            app:expandedTitleMarginTop="140dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/sunset"
+                app:layout_collapseMode="parallax"
+                android:scaleType="centerCrop"/>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                <Space
+                    android:id="@+id/circle_collapsed_target"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+
+            </android.support.v7.widget.Toolbar>
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_scrolling"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circle_image_view"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/abby"
+        android:layout_marginTop="220dp"
+        android:layout_gravity="top|center_horizontal"
+        android:elevation="8dp"
+        app:border_color="@android:color/black"
+        app:border_width="2dp"
+        app:collapsedTarget="@id/circle_collapsed_target"
+        app:layout_behavior="com.krislarson.customcoordinatorlayoutbehavior.CollapsingImageBehavior"/>
+
+</android.support.design.widget.CoordinatorLayout>
