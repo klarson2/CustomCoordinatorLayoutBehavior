@@ -19,29 +19,29 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ScrollingActivity extends AppCompatActivity {
 
-   private Rect mStart = new Rect();
+    private Rect mStart = new Rect();
 
-   private Rect mTarget = new Rect();
+    private Rect mTarget = new Rect();
 
-   @Override
-   protected void onCreate(Bundle savedInstanceState) {
-      super.onCreate(savedInstanceState);
-      setContentView(R.layout.activity_scrolling);
-      Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-      setSupportActionBar(toolbar);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_scrolling);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-      final ActionBar actionBar = getSupportActionBar();
-      if (actionBar != null) {
-         actionBar.setTitle("Abby");
-         actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
-         actionBar.setDisplayHomeAsUpEnabled(true);
-      }
+        final ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle("Abby");
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
-      final View target = findViewById(R.id.circle_collapsed_target);
+        final View target = findViewById(R.id.circle_collapsed_target);
 
-      final CircleImageView circleImageView = (CircleImageView) findViewById(R.id.circle_image_view);
+        final CircleImageView circleImageView = (CircleImageView) findViewById(R.id.circle_image_view);
 
-      AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.app_bar);
+        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.app_bar);
 
 
 //      FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -52,26 +52,26 @@ public class ScrollingActivity extends AppCompatActivity {
 //                  .setAction("Action", null).show();
 //         }
 //      });
-   }
+    }
 
-   @Override
-   public boolean onCreateOptionsMenu(Menu menu) {
-      // Inflate the menu; this adds items to the action bar if it is present.
-      getMenuInflater().inflate(R.menu.menu_scrolling, menu);
-      return true;
-   }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_scrolling, menu);
+        return true;
+    }
 
-   @Override
-   public boolean onOptionsItemSelected(MenuItem item) {
-      // Handle action bar item clicks here. The action bar will
-      // automatically handle clicks on the Home/Up button, so long
-      // as you specify a parent activity in AndroidManifest.xml.
-      int id = item.getItemId();
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
 
-      //noinspection SimplifiableIfStatement
-      if (id == R.id.action_settings) {
-         return true;
-      }
-      return super.onOptionsItemSelected(item);
-   }
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
